@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "274677001474",
+    "firebase_url": "https://zerosysacad.firebaseio.com",
+    "project_id": "zerosysacad",
+    "storage_bucket": "zerosysacad.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:274677001474:android:c14f96d031a0d2fb25261b",
+        "android_client_info": {
+          "package_name": "com.zero"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "274677001474-2hv05btesp215nbpc7jfaraegh1b7qaj.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.zero",
+            "certificate_hash": "e479705c8f8980978c629adfce62d0c9320e785a"
+          }
+        },
+        {
+          "client_id": "274677001474-8javopnf416lpgj4gu24tejlbq2137j9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCn1r09kmQqreN8UBYoYzoDcT-TGB6W5js"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "274677001474-8javopnf416lpgj4gu24tejlbq2137j9.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

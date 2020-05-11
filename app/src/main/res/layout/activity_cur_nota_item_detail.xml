@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="300dp"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@color/card_bg_color"
+        android:gravity="center_horizontal"
+        android:layout_marginTop="50dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Horario"
+            android:textColor="@color/title_text_color"
+            android:textStyle="bold"
+            android:textSize="24sp"
+            android:layout_marginTop="50dp"
+            />
+        <TextView
+            android:id="@+id/cur_nota_txt_horario"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Horario"
+            android:gravity="center"
+            android:textColor="@color/content_text_color"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:layout_marginTop="2dp"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Notas"
+            android:textColor="@color/title_text_color"
+            android:textStyle="bold"
+            android:textSize="24sp"
+            android:layout_marginTop="2dp"
+            />
+        <TextView
+            android:id="@+id/cur_nota_txt_notas"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Notas"
+            android:textColor="@color/content_text_color"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:textSize="18sp"
+            android:layout_marginTop="2dp"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Observaciones"
+            android:textColor="@color/title_text_color"
+            android:textStyle="bold"
+            android:textSize="24sp"
+            android:layout_marginTop="2dp"
+            />
+        <TextView
+            android:id="@+id/cur_nota_txt_obs"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Observaciones"
+            android:gravity="center"
+            android:textColor="@color/content_text_color"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:layout_marginTop="2dp"
+            android:layout_marginBottom="10dp"
+            />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/cur_nota_img_comision"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:gravity="center_vertical|center_horizontal"
+        android:textStyle="bold"
+        android:text="5(5k1)"
+        android:textColor="#ffffff"
+        android:textSize="18dp"
+        android:background="@drawable/cercleshape_0"
+        android:padding="10dp"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentTop="true"/>
+
+</RelativeLayout>
