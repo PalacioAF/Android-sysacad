@@ -22,7 +22,7 @@ import com.zero.model.Estudiante;
 import com.zero.retrofit.ApiRest;
 import com.zero.sesion_manager.SesionManager;
 
-//Subido a github test
+//Subido a github
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
 
     TextView txt_estudiante;
