@@ -15,16 +15,27 @@ import android.util.Log;
 
 import com.google.firebase.messaging.FirebaseMessagingService;
 import com.google.firebase.messaging.RemoteMessage;
+import com.google.gson.Gson;
 import com.zero.MainActivity;
 import com.zero.R;
+import com.zero.Request.RequestPostNotificacion;
+import com.zero.model.Estudiante;
+import com.zero.model.Notificacion;
+import com.zero.retrofit.ApiRest;
 import com.zero.sesion_manager.SesionManager;
 
+import java.util.Date;
 import androidx.core.app.NotificationCompat;
+import com.zero.retrofit.Utilities;
 import androidx.core.app.NotificationManagerCompat;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class NotificationService extends FirebaseMessagingService {
 
     SesionManager sesionManager;
+    ApiRest mAPIService;
 
     /*public NotificationService() {
     }
@@ -38,9 +49,12 @@ public class NotificationService extends FirebaseMessagingService {
     public void onMessageReceived(RemoteMessage remoteMessage) {
         String tituloD=remoteMessage.getData().get("TituloD");
         String descripcionD=remoteMessage.getData().get("DescripcionD");
+        sesionManager = new SesionManager(getApplicationContext());
+        Estudiante estudiante = new Estudiante();
+        estudiante = sesionManager.GetEstudiante();
+        AddNotificacion(tituloD,descripcionD,estudiante.get_id());
         showNotificacion(tituloD,descripcionD);
         Log.d("FCM",tituloD+"-"+descripcionD);
-
     }
 
 
@@ -92,5 +106,21 @@ public class NotificationService extends FirebaseMessagingService {
 
         notificationManager.notify(1 , notificationBuilder.build());
 
+    }
+
+    private void AddNotificacion(String titulo,String descripcion,String estudianteID) {
+        mAPIService= Utilities.getAPIService();
+        mAPIService.AddNotificacion(new Notificacion(titulo,descripcion,new Date(),new Date(),"Activa",estudianteID)).enqueue(new Callback<RequestPostNotificacion>() {
+            @Override
+            public void onResponse(Call<RequestPostNotificacion> call, Response<RequestPostNotificacion> response) {
+                Gson objetoConsola= new Gson();
+                Log.i("Notificacion",objetoConsola.toJson(response.body()));
+            }
+
+            @Override
+            public void onFailure(Call<RequestPostNotificacion> call, Throwable t) {
+
+            }
+        });
     }
 }

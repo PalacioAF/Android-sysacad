@@ -99,9 +99,9 @@ public class NotifActivity extends AppCompatActivity {
                                 ,objeto.getFechaActivacion(),objeto.getEstado(),objeto.getIdEstudiante()));
                         Log.i("Prueba Rest", objetoConsola.toJson(objeto.getTitulo()).toString());
                     }
-                    adapter = new NotifAdapter(getApplicationContext(), mdata);
+                    adapter = new NotifAdapter(NotifActivity.this, mdata);
                     recyclerView.setAdapter(adapter);
-                    recyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
+                    recyclerView.setLayoutManager(new LinearLayoutManager(NotifActivity.this));
                     progressBar.setVisibility(View.INVISIBLE);
                 } else if (response.code() == 401){
                     progressBar.setVisibility(View.INVISIBLE);

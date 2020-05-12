@@ -1,6 +1,10 @@
 package com.zero.act_notif;
 
+import android.app.Dialog;
 import android.content.Context;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
+import android.text.method.ScrollingMovementMethod;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -27,6 +31,7 @@ public class NotifAdapter extends RecyclerView.Adapter<NotifAdapter.MainViewHold
     Context mContext;
     List<Notificacion> mData;
     List<Notificacion> mDataFiltered ;
+    Dialog detail;
 
     public NotifAdapter(Context mContext, List<Notificacion> mData) {
         this.mContext = mContext;
@@ -39,7 +44,29 @@ public class NotifAdapter extends RecyclerView.Adapter<NotifAdapter.MainViewHold
     public MainViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View layaut;
         layaut = LayoutInflater.from(mContext).inflate(R.layout.activity_notif_item,parent,false);
-        return new MainViewHolder(layaut);
+        final MainViewHolder viewHolder = new MainViewHolder(layaut);
+
+        //Dialog
+        detail = new Dialog(mContext);
+        detail.setContentView(R.layout.activity_notif_item_detail);
+        detail.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+
+
+        viewHolder.container.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View view) {
+                TextView titulo = (TextView) detail.findViewById(R.id.notif_popup_txt_title);
+                TextView descripcion = (TextView) detail.findViewById(R.id.notif_popup_txt_detail);
+                titulo.setText(mDataFiltered.get(viewHolder.getAdapterPosition()).getTitulo());
+                descripcion.setText(mDataFiltered.get(viewHolder.getAdapterPosition()).getDescripcion());
+                descripcion.setMovementMethod(new ScrollingMovementMethod());
+                descripcion.scrollTo(0, 0);
+                detail.show();
+            }
+        });
+
+        return viewHolder;
     }
 
     @Override

@@ -21,19 +21,31 @@
             android:textColor="@color/title_text_color"
             android:textStyle="bold"
             android:textSize="24sp"
-            android:layout_marginTop="50dp"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
+            android:gravity="center"
+            android:layout_marginTop="45dp"
             />
+
         <TextView
             android:id="@+id/notif_popup_txt_detail"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Detail"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="5dp"
+            android:fadeScrollbars="false"
+            android:fadingEdge="vertical"
             android:gravity="center"
+            android:maxLines="6"
+            android:minLines="2"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:scrollbarStyle="insideOverlay"
+            android:scrollbars="vertical"
+            android:text="Detail"
             android:textColor="@color/content_text_color"
-            android:textStyle="bold"
             android:textSize="18sp"
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="20dp"/>
+            android:textStyle="bold" />
 
     </LinearLayout>
 
