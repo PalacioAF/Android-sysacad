@@ -1,6 +1,7 @@
 package com.zero.retrofit;
 
-import com.zero.Request.RequestPostNotificacion;
+import com.zero.request.RequestDeleteNotificacion;
+import com.zero.request.RequestPostNotificacion;
 import com.zero.model.Notificacion;
 import com.zero.response.ResponseGetCorrelatividadCursado;
 import com.zero.response.ResponseGetCorrelatividadRendir;
@@ -13,6 +14,7 @@ import com.zero.response.ResponseGetNotificacion;
 
 import retrofit2.Call;
 import retrofit2.http.Body;
+import retrofit2.http.DELETE;
 import retrofit2.http.GET;
 import retrofit2.http.Header;
 import retrofit2.http.POST;
@@ -38,4 +40,6 @@ public interface ApiRest {
     Call<ResponseGetNotificacion> GetNotificacion(@Header("Authorization") String token, @Path("id") String id);
     @POST("notificacion")
     Call<RequestPostNotificacion> AddNotificacion(@Body Notificacion notificacion);
+    @DELETE("notificacion/{id}")
+    Call<RequestDeleteNotificacion> DeleteNotificacion(@Path("id") String usuario);
 }

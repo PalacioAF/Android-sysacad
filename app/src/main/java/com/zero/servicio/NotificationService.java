@@ -1,15 +1,12 @@
 package com.zero.servicio;
 
-import android.app.Notification;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
-import android.app.Service;
 import android.app.TaskStackBuilder;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Build;
-import android.os.IBinder;
 import android.provider.Settings;
 import android.util.Log;
 
@@ -18,7 +15,7 @@ import com.google.firebase.messaging.RemoteMessage;
 import com.google.gson.Gson;
 import com.zero.MainActivity;
 import com.zero.R;
-import com.zero.Request.RequestPostNotificacion;
+import com.zero.request.RequestPostNotificacion;
 import com.zero.model.Estudiante;
 import com.zero.model.Notificacion;
 import com.zero.retrofit.ApiRest;
@@ -27,7 +24,7 @@ import com.zero.sesion_manager.SesionManager;
 import java.util.Date;
 import androidx.core.app.NotificationCompat;
 import com.zero.retrofit.Utilities;
-import androidx.core.app.NotificationManagerCompat;
+
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;

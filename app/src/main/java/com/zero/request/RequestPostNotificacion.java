@@ -1,4 +1,4 @@
-package com.zero.Request;
+package com.zero.request;
 
 import com.zero.model.Estado;
 import com.zero.model.Notificacion;

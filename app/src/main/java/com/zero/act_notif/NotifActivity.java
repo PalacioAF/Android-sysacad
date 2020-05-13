@@ -20,6 +20,7 @@ import android.widget.ProgressBar;
 
 import com.github.ybq.android.spinkit.sprite.Sprite;
 import com.github.ybq.android.spinkit.style.DoubleBounce;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.gson.Gson;
 import com.zero.R;
 import com.zero.dialog.Dialog;
@@ -42,6 +43,7 @@ public class NotifActivity extends AppCompatActivity {
     String token;
     EditText searchInput;
     CharSequence search = "";
+    FloatingActionButton fab_delete;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -121,6 +123,16 @@ public class NotifActivity extends AppCompatActivity {
                 progressBar.setVisibility(View.INVISIBLE);
                 FragmentManager fragmentManager = getSupportFragmentManager();
                 Dialog dialog =Dialog.newInstance("api");;
+                dialog.show(fragmentManager, "Alert");
+            }
+        });
+
+        fab_delete=(FloatingActionButton) findViewById(R.id.notif_fab_delete);
+        fab_delete.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                FragmentManager fragmentManager = getSupportFragmentManager();
+                Dialog dialog =Dialog.newInstance("delete");;
                 dialog.show(fragmentManager, "Alert");
             }
         });
