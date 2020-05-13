@@ -24,6 +24,7 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.gson.Gson;
 import com.zero.R;
 import com.zero.dialog.Dialog;
+import com.zero.dialog.DialogConfirm;
 import com.zero.model.Estudiante;
 import com.zero.model.Notificacion;
 import com.zero.response.ResponseGetNotificacion;
@@ -132,7 +133,7 @@ public class NotifActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 FragmentManager fragmentManager = getSupportFragmentManager();
-                Dialog dialog =Dialog.newInstance("delete");;
+                DialogConfirm dialog=DialogConfirm.newInstance("delete");
                 dialog.show(fragmentManager, "Alert");
             }
         });
